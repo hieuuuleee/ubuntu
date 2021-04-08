@@ -40,3 +40,4 @@ sudo service nginx restart
 
 ## References
 - [Digital Ocean guide for nginx configuration](https://www.digitalocean.com/community/tutorials/how-to-host-a-website-using-cloudflare-and-nginx-on-ubuntu-16-04)
+
