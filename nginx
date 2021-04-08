@@ -1,0 +1,42 @@
+## Config site template:
+```bash
+server {
+    listen 80;
+    server_name example.com www.example.com;
+
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+```
+# Nginx configuration
+Collections of nginx configuration files on different environments
+
+0. Install nginx.
+```
+sudo apt-get update
+sudo apt-get install nginx
+```
+
+
+1. Copy nginx configuration file to `/etc/nginx/sites-available/`
+
+2. Symlink this file from the directory `sites-available` to `site-enabled` to enable configuration. 
+
+```
+ sudo ln -s /etc/nginx/sites-available/example /etc/nginx/sites-enabled/
+```
+
+3. Test configuration files and restart the nginx service
+
+```
+sudo service nginx configtest
+sudo service nginx restart
+```
+
+## References
+- [Digital Ocean guide for nginx configuration](https://www.digitalocean.com/community/tutorials/how-to-host-a-website-using-cloudflare-and-nginx-on-ubuntu-16-04)
