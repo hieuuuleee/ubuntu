@@ -12,3 +12,7 @@ sudo apt-get install python-dev default-libmysqlclient-dev
 sudo apt-get install python3-dev
 pip install mysqlclient
 ```
+### check open port:
+```bash
+sudo lsof -i
+```
