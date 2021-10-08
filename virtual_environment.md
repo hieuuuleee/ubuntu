@@ -21,6 +21,9 @@
 ### Active your virtual environment:    
     
     source venv/bin/activate
+#### For window:
+    Set-ExecutionPolicy Unrestricted -Scope Process
+    .\venv\Scripts\activate
     
 ### Using fish shell:    
     
